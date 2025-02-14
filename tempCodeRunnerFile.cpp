@@ -1,26 +1,51 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define v vector<int>
-int main(){
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        string s;
-        cin>>s;
-        int c = 1;
-        if(s.size()==1)
-            cout<<0<<endl;
+
+int main() {
+    // int cases;
+    // cin >> cases;
+
+    // while (cases--) {
+    //     int n;
+    //     cin >> n;
+    //     vector<int> v(n);
+
         
-        for(int i=1;i<s.size();i++)
+    //     for (int i = 0; i < n; i++) {
+    //         cin >> v[i];
+    //     }
+
+    //     map<int, int> mp;
+
+        
+    //     for (auto it : v) {
+    //         mp[it]++;
+    //     }
+    //     for (auto it : mp) {
+    //         cout << it.first << " " << it.second << endl;
+    //     }
+    // }
+    int n;
+    cin>>n;
+    vector<int> v;
+    v.push_back(n);
+    while(n!=1)
+    {
+        if(n%2==0)
         {
-            if(s[i]==s[i-1])
-                c++;
+            n/=2;
+            v.push_back(n);
         }
-        if(c==1)
-            cout<<s.size()<<endl;
-        else
-            cout<<c-1<<endl;
+        else{
+            n=(n*3)+1;
+            v.push_back(n); 
+        }    
+        for(int i=0;i<n;i++)
+        {
+            cout<<v[i]<<" ";
+        }    
+
     }
+
     return 0;
 }
