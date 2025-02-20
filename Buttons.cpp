@@ -10,16 +10,18 @@ int main() {
     {
         int a,b,c;
         cin>>a>>b>>c;
-        if((a+b)%2 == 0 && c%2!=0)
-            cout<<"First"<<endl;
-        else if((a+b)%2==0 && c%2 == 0)
-            cout<<"Second"<<endl;
-        else if(b>a)
+        if(c%2==0)
         {
-            cout<<"Second"<<endl;
+            if(a>b)
+                cout<<"First"<<endl;
+            else    
+                cout<<"Second"<<endl;
         }
         else
-            cout<<"First";
+            if(b>a)
+                cout<<"Second"<<endl;
+            else
+                cout<<"First"<<endl;
     }
     return 0;
 }
